@@ -1,0 +1,61 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "useDefineForClassFields": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "strictFunctionTypes": false,
+    "strictNullChecks": false,
+    "skipLibCheck": true, // mqtt.js 需要这个配置
+
+    "jsx": "preserve", // 在 .tsx 中支持 JSX
+    "allowJs": true, // 允许编译器编译JS，JSX文件
+    "sourceMap": true, // 生成目标文件的 sourceMap 文件
+    "alwaysStrict": true,
+    "noImplicitAny": false,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true, // 允许导入带有“.json”扩展名的模块
+    "esModuleInterop": true, // CommonJS/AMD/UMD 模块导入兼容
+    "outDir": "./dist",
+    "lib": [
+      "esnext", 
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ],
+    "isolatedModules": false,
+    "types": ["vite/client", "node"],
+
+    // "checkJs": true,
+    // "noEmit": true, // 编译后不输出任何js文件
+        
+    "baseUrl": ".",
+    "paths": {
+      "@mars/*": [
+        "src/marsgis/*"
+      ],
+      "mars3d": [
+        "src/marsgis/common/mars3d-sdk"
+      ],
+      "@dji/*": [
+        "src/dji/*"
+      ],
+    }
+  },
+  "include": [
+    "src/**/*.ts", 
+    "src/**/*.d.ts", 
+    "src/**/*.tsx", 
+    "src/**/*.vue"
+  ],
+  "exclude": [
+    "node_modules",
+    "tests/server/**/*.ts",
+    "src/**/*.js",
+    "dist"
+  ],
+  // "references": [{ "path": "./tsconfig.node.json" }]
+}
