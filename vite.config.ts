@@ -26,7 +26,7 @@ export default ({ mode }) => defineConfig({
     ]
   },
   build: {
-    outDir: './dist/diagnostics'
+    outDir: './dist/tool'
     },
   plugins: [vue(),
   createStyleImportPlugin({
